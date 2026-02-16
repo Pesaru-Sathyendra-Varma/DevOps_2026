@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: 18
           cache: npm
-          cache-dependency-path: backend/package-lock.json
+          cache-dependency-path: 20260216/finance-ci-integration/backend/package-lock.json
 
       - name: Install backend dependencies
-        working-directory: backend
+        working-directory: 20260216/finance-ci-integration/backend
         run: npm install
 
       - name: Run integration tests
-        working-directory: backend
+        working-directory: 20260216/finance-ci-integration/backend
         run: npm test
