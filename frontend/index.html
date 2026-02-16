@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Finance Tracker - Finance CI Integration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <section class="top">
+      <div class="title-block">
+        <h1>Finance CI Integration</h1>
+        <p class="subtitle">
+          Track income and expenses in real time. Built for your DevOps lab with clean UI,
+          fast updates, and clear insights.
+        </p>
+        <div class="action-row">
+          <button class="refresh-btn" id="refreshBtn">
+            Refresh data
+            <span class="status-pill" id="apiStatus">API: connected</span>
+          </button>
+          <span class="muted" id="lastUpdated">Last updated: --</span>
+        </div>
+      </div>
+      <div class="balance-card">
+        <h2>BALANCE</h2>
+        <p class="balance-amount" id="balanceAmount">₹10,200</p>
+        <div class="balance-meta">
+          <span>Total Income: <strong id="totalIncome">₹12,000</strong></span>
+          <span>Total Expenses: <strong id="totalExpenses">₹1,800</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Expenses</h3>
+        <p>Log spending and keep it visible.</p>
+        <div class="form">
+          <input class="input" id="expenseTitle" type="text" placeholder="Title" />
+          <input class="input" id="expenseAmount" type="number" placeholder="Amount" />
+          <button class="submit-btn" id="addExpense">Add expense</button>
+        </div>
+        <ul class="list" id="expenseList">
+          <li class="list-item">
+            <span>Groceries – ₹500</span>
+            <span class="tag">Expense</span>
+          </li>
+          <li class="list-item">
+            <span>Fuel – ₹300</span>
+            <span class="tag">Expense</span>
+          </li>
+          <li class="list-item">
+            <span>Salary – ₹1,000</span>
+            <span class="tag">Expense</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Income</h3>
+        <p>Capture earnings from every source.</p>
+        <div class="form">
+          <input class="input" id="incomeSource" type="text" placeholder="Source" />
+          <input class="input" id="incomeAmount" type="number" placeholder="Amount" />
+          <button class="submit-btn" id="addIncome">Add income</button>
+        </div>
+        <ul class="list" id="incomeList">
+          <li class="list-item">
+            <span>Salary – ₹10,000</span>
+            <span class="tag">Income</span>
+          </li>
+          <li class="list-item">
+            <span>Freelance – ₹2,000</span>
+            <span class="tag">Income</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
