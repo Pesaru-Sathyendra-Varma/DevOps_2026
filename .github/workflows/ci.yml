@@ -19,8 +19,8 @@ jobs:
 
       - name: Install backend dependencies
         working-directory: 20260216/finance-ci-integration/backend
-        run: npm install
+        run: npm ci
 
       - name: Run integration tests
         working-directory: 20260216/finance-ci-integration/backend
-        run: npm test
+        run: npx jest --runInBand --forceExit
