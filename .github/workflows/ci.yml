@@ -1,26 +1,28 @@
-name: CI - Integration Tests (Backend APIs)
+name: CI - Dockerize Node.js API
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
-  integration-tests:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-      - name: Install backend dependencies
-        working-directory: 20260216/finance-ci-integration/backend
-        run: npm ci
+      - name: Build Docker image
+        run: |
+          docker build -t finance-tracker-api .
 
-      - name: Run integration tests
-        working-directory: 20260216/finance-ci-integration/backend
-        run: npx jest --runInBand --forceExit
+      - name: Run Docker container
+        run: |
+          docker run -d -p 3000:3000 finance-tracker-api
