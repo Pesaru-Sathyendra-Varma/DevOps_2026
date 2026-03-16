@@ -1,0 +1,13 @@
+.btn,
+.card,
+.nav-link,
+.form-control,
+.form-select,
+.page-link {
+  transition: all 0.2s ease;
+}
+
+.btn-info {
+  color: #052531;
+  font-weight: 600;
+}

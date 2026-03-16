@@ -1,0 +1,114 @@
+:root {
+  --bg: #f5fbff;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #0dcaf0;
+  --secondary: #20c997;
+  --border: #dbe5ee;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body.dark-mode {
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.hero-section {
+  background: linear-gradient(120deg, #0ea5e9, #2563eb, #0f766e);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-nav {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.social-link {
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+}
+
+.auth-card {
+  max-width: 720px;
+}
+
+.destination-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--surface);
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0.9rem 1.8rem rgba(15, 23, 42, 0.12) !important;
+}
+
+.card-image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.dashboard-sidebar {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  position: sticky;
+  top: 90px;
+}
+
+.details-hero {
+  max-height: 440px;
+  object-fit: cover;
+}
+
+.gallery-thumb {
+  height: 110px;
+  object-fit: cover;
+}
+
+.review-list {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.card,
+.table,
+.form-control,
+.form-select {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.text-secondary {
+  color: var(--muted) !important;
+}
